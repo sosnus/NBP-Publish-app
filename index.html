@@ -22,7 +22,7 @@ xmlhttp.onreadystatechange = function() {
     
         document.getElementById("release_date").innerHTML = myObj.published_at;    
         document.getElementById("download").innerHTML =
-        "<button onclick='" + myObj.assets[0].browser_download_url + "http://www.example.com' type='button'>DOWNLOAD JAR</button>";
+        "<button onclick='" + myObj.assets[0].browser_download_url + "' type='button'>DOWNLOAD JAR</button>";
   }
 };
 xmlhttp.open("GET", "https://api.github.com/repos/IIS-ZPI/ZPI_2019_Dzienni_IO2_2/releases/latest", true);

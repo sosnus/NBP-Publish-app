@@ -9,9 +9,8 @@
 <b>TAG NAME:</b><p id="tag_name">NULL</p>
 <b>INFO:</b><p id="body">NULL</p>
 <b>RELEASE DATE:</b><p id="release_date">NULL</p>
-<b>DOWNLOAD JAR:</b><p id="download">NULL</p>
   
-<b>DOWNLOAD JAR:</b><p id="download2">NULL</p>
+<b>DOWNLOAD JAR:</b><p id="download">NULL</p>
   
 
 <script>
@@ -22,11 +21,8 @@ xmlhttp.onreadystatechange = function() {
     document.getElementById("url").innerHTML = myObj.url;
     document.getElementById("tag_name").innerHTML = myObj.tag_name;
     document.getElementById("body").innerHTML = myObj.body;
-    
-        document.getElementById("release_date").innerHTML = myObj.published_at;    
-        document.getElementById("download").innerHTML =
-        "<button onclick='" + myObj.assets[0].browser_download_url + "' type='button'>DOWNLOAD JAR</button>"; 
-        document.getElementById("download2").innerHTML = "<a href='" + myObj.assets[0].browser_download_url + "' download='proposed_file_name'>Download JAR!</a>";
+    document.getElementById("release_date").innerHTML = myObj.published_at;    
+    document.getElementById("download").innerHTML = "<a href='" + myObj.assets[0].browser_download_url + "' download='proposed_file_name'>Download JAR!</a>";
      
   }
 };

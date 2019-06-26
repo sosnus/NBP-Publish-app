@@ -5,11 +5,14 @@
 <h2>Use the XMLHttpRequest to get the content of a file.</h2>
 <p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
 
-<b>URL:</b><p id="url">URL</p>
-<b>TAG NAME:</b><p id="tag_name">ULR</p>
-<b>INFO:</b><p id="body">URL</p>
-<b>RELEASE DATE:</b><p id="release_date">URL</p>
-<b>DOWNLOAD JAR:</b><p id="download">URL</p>
+<b>URL:</b><p id="url">NULL</p>
+<b>TAG NAME:</b><p id="tag_name">NULL</p>
+<b>INFO:</b><p id="body">NULL</p>
+<b>RELEASE DATE:</b><p id="release_date">NULL</p>
+<b>DOWNLOAD JAR:</b><p id="download">NULL</p>
+  
+<b>DOWNLOAD JAR:</b><p id="download2">NULL</p>
+  
 
 <script>
 var xmlhttp = new XMLHttpRequest();
@@ -22,7 +25,9 @@ xmlhttp.onreadystatechange = function() {
     
         document.getElementById("release_date").innerHTML = myObj.published_at;    
         document.getElementById("download").innerHTML =
-        "<button onclick='" + myObj.assets[0].browser_download_url + "' type='button'>DOWNLOAD JAR</button>";
+        "<button onclick='" + myObj.assets[0].browser_download_url + "' type='button'>DOWNLOAD JAR</button>"; 
+        document.getElementById("download2").innerHTML = "<a href=' + myObj.assets[0].browser_download_url + ' download='proposed_file_name'>Download JAR!</a>";
+     
   }
 };
 xmlhttp.open("GET", "https://api.github.com/repos/IIS-ZPI/ZPI_2019_Dzienni_IO2_2/releases/latest", true);
